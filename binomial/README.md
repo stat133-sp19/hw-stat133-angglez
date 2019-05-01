@@ -23,7 +23,7 @@ binomial distribution and relevant visuals.
 
 -----
 
-\#\#\#Install the Package
+### Install the Package
 
 Utilize the package `"devtools"` to install the package:
 
@@ -32,44 +32,14 @@ Utilize the package `"devtools"` to install the package:
 
 # install "BinDist" without vignettes
 devtools::install_github("angglez/binomial")
-#> Downloading GitHub repo angglez/binomial@master
-#>   
-   checking for file ‘/private/var/folders/vf/nj7b74hn2xxb4n55t50knlkw0000gq/T/Rtmpg0ktSM/remotes7145b156a7b/angglez-binomial-bb21805/DESCRIPTION’ ...
-  
-✔  checking for file ‘/private/var/folders/vf/nj7b74hn2xxb4n55t50knlkw0000gq/T/Rtmpg0ktSM/remotes7145b156a7b/angglez-binomial-bb21805/DESCRIPTION’ (349ms)
-#> 
-  
-─  preparing ‘BinDist’:
-#> 
-  
-   checking DESCRIPTION meta-information ...
-  
-✔  checking DESCRIPTION meta-information
-#> 
-  
-─  checking for LF line-endings in source and make files and shell scripts
-#> 
-  
-─  checking for empty or unneeded directories
-#> 
-  
-─  building ‘BinDist_0.1.0.tar.gz’
-#> 
-  
-   
-#> 
-#> Installing package into '/Users/Anglezzz/Library/R/3.5/library'
-#> (as 'lib' is unspecified)
 
 # install "BinDist" with vignettes
 devtools::install_github("angglez/binomial", build_vignettes=TRUE)
-#> Skipping install of 'BinDist' from a github remote, the SHA1 (bb218058) has not changed since last install.
-#>   Use `force = TRUE` to force installation
 ```
 
 -----
 
-\#\#\#Application
+### Application
 
 ``` r
 library(BinDist)
