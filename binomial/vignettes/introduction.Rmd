@@ -1,0 +1,99 @@
+---
+title: "Introduction to Utilizing BinDist"
+author: "Angela Gao"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{my-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(BinDist)
+```
+
+## BinDist
+
+This package "BinDist" implements the relevant calculations and parameters necessary to calculate the Binomial distribution of discrete random variables, as well as further implementations of the cumulative binomial distribution and relevant visuals. 
+
+***
+
+### Combinations
+
+Calculates the number of possible combinations of size k that can be selected from a group of size n, order doesn't matter. 
+
+```{r}
+bin_choose(10,2) 
+```
+
+Using bin_choose(), we can find how many unique pairs can be selected from a group of 10. 
+
+
+### Binomial Probability
+
+Using combinations, we multiply the number of possible combinations with the probabilities for getting that particular grouping to derive the binomial probability. 
+
+```{r}
+bin_probability(2,10,0.1) 
+```
+
+For 2 successes, 8 failures, and 0.1 (10%) chance of succeeding, we can use bin_probability() to calculate the probability of getting 2 successes out of 10 trials.
+
+***
+
+### Binomial Distribution
+
+Collecting all of the binomial probabilities for all numbers of successes, we get the binomial probability distribution of the discrete random variable. 
+
+```{r}
+a <- bin_distribution(10,0.1)
+a
+```
+
+Use 'plot()' function to plot the discrete binomial probability distribution.
+
+```{r, fig.show='hold'}
+plot(a)
+```
+
+
+### Cumulative Binomial Distribution
+
+Taking the same binomial distribution, we can now use that to find the cumulative probability distribution.
+
+```{r}
+b <- bin_cumulative(10,0.1)
+b
+```
+
+Similarly, we can also plot the cumulative distribution with the 'plot()' function.
+
+```{r, fig.show='hold'}
+plot(b)
+```
+
+***
+
+### Binomial Variables and Parameters
+
+Use 'bin_variable()' to present the parameters of the binomial.
+
+```{r}
+c <- bin_variable(10,0.1)
+c
+```
+
+For additional summary measures of the probability distribution, use the function 'summary()' upon the display of binomial variables. 
+
+```{r}
+summary(c)
+```
+
